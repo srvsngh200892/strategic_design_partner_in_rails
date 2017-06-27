@@ -1,0 +1,1 @@
+# strategic_design_partner_in_rails
