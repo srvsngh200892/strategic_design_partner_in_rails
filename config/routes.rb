@@ -1,13 +1,5 @@
 Rails.application.routes.draw do
-
-  constraints(:subdomain => /api/) do
-    get '/' => "home#api_index"
-    scope :module => "api", defaults: {format: :json} do
-      namespace :v1 do
-        resources :cars, only: [:index]
-      end
-    end
-  end
+  draw :api
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
