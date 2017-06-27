@@ -77,6 +77,8 @@ RSpec.configure do |config|
     puts "Number of Factories Created"
     puts factory_girl_results
   end
+
+  config.include RequestHelper
 end
 
 Shoulda::Matchers.configure do |config|
