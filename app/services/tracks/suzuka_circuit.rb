@@ -1,7 +1,7 @@
 class Tracks::SuzukaCircuit < Tracks::TrackDetail
 
   #Its a child track class, add functionality only related to this track
-  def max_speed_factor(context=nil)
+  def track_slowness_factor(context=nil)
     compute_factor
   end
 

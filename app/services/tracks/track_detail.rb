@@ -2,7 +2,7 @@ class Tracks::TrackDetail
 
   # Its a base class add functionality common to all the track
 
-  def max_speed_factor(context=nil)
+  def track_slowness_factor(context=nil)
     raise 'Abstract method called'
   end
 
