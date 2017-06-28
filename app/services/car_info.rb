@@ -7,9 +7,14 @@ class CarInfo
   end
 
   def details
-    car = Car.friendly.find(car_slug)
-    @max_speed = car.max_speed
-    get_json_response(car)
+    begin
+      car = Car.friendly.find(car_slug)
+      @max_speed = car.max_speed
+      get_json_response(car)
+    rescue => error
+       {car: { staus: 'Car Not Found'} }
+    end
+
   end
 
   private
