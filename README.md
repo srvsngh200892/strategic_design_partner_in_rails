@@ -25,7 +25,7 @@ Things you need to know for this application :
      * Request Type GET
      
      * Different Response 
-       {
+       - {
             "car": {
                 "id": 1,
                 "name": "subaru_impreza",
