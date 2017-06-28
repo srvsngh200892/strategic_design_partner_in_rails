@@ -11,7 +11,7 @@ default: &default
 development:
   <<: *default
   database: aureso_dev
-  username: flock
+  username:
   password:
   host: localhost
 
@@ -21,7 +21,7 @@ development:
 test:
   <<: *default
   database: aureso_test
-  username: flock
+  username:
   password:
   host: localhost
 

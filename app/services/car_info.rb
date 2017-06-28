@@ -29,6 +29,7 @@ class CarInfo
   def track_max_speed
    begin
       if track.present?
+        #get track object on run time based on params"
         track_factor = "Tracks::#{track.titleize.gsub(' ', '')}".constantize.new.track_slowness_factor(self)
         (max_speed - track_factor.to_f*max_speed/100)
       else
