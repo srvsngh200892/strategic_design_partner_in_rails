@@ -19,7 +19,7 @@ RSpec.describe CarInfo, type: :service do
       it { expect(car_info.details).not_to be_empty }
 
       it 'respond with car detail json with max_speed_on_track' do
-        expect(car_info.details['max_speed_on_track']).to match(/km/)
+        expect(car_info.details['car']['max_speed_on_track']).to match(/km/)
       end
     end
 
@@ -32,7 +32,7 @@ RSpec.describe CarInfo, type: :service do
       end
 
       it 'respond with car detail json with track not found' do
-       expect(car_info.details['max_speed_on_track']).to eq('Track Not Found')
+       expect(car_info.details['car']['max_speed_on_track']).to eq('Track Not Found')
       end
     end
 
@@ -44,7 +44,7 @@ RSpec.describe CarInfo, type: :service do
       end
 
       it 'respond with car detail json with track not selected' do
-        expect(car_info.details['max_speed_on_track']).to eq('Track Not Selected')
+        expect(car_info.details['car']['max_speed_on_track']).to eq('Track Not Selected')
       end
     end
   end
