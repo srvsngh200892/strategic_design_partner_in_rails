@@ -21,11 +21,11 @@ Things you need to know for this application :
   * run controllers specs use command
     rspec spec/controllers
 * api end points
-   * GET /api/v1/cars/:car_slug  (pass valid csv)
+   * GET /api/v1/cars/:car_slug?track=xyz  (pass valid csv)
      * Request Type GET
      
-     * Response 
-       {
+     * Different Response 
+       - {
             "car": {
                 "id": 1,
                 "name": "subaru_impreza",
@@ -34,7 +34,33 @@ Things you need to know for this application :
                 "max_speed_on_track": "215.6km/h"
             }
         }
-    
+        - if car not found
+           {
+                "car": {
+                    "staus": "Car Not Found"
+                }
+            }  
+        - if track not found
+            {
+            "car": {
+                "id": 1,
+                "name": "subaru_impreza",
+                "max_speed": "280.0km/h",
+                "slug": "subaru_impreza",
+                "max_speed_on_track": "Track Not Found"
+                }
+            }
+            
+         - if track param not  passed
+            {
+            "car": {
+                "id": 1,
+                "name": "subaru_impreza",
+                "max_speed": "280.0km/h",
+                "slug": "subaru_impreza",
+                "max_speed_on_track": "Track Not Selected"
+                }
+            }   
    
  * File we have 
     - controller
